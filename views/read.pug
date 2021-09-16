@@ -1,0 +1,26 @@
+extends main
+block content
+    section.row.justify-content-center
+        table.table.table-hover.align-middle
+            thead 
+                tr 
+                    th(scope="col") id
+                    th(scope="col") Estreno 
+                    th(scope="col") Título
+                    th(scope="col") Taquilla
+                    th(scope="col") Entradas
+                    th(scope="col") Top 
+                    th(scope="col") Acciones
+            tbody
+                each pelicula in peliculas  
+                    tr 
+                        th(scope="row")=pelicula.id 
+                        td=`${new Date(pelicula.estreno).getFullYear()}` 
+                        td=pelicula.titulo
+                        td=pelicula.taquilla 
+                        td=pelicula.entradas 
+                        td=pelicula.top 
+                        td
+                            button.btn.btn-primary.btn-lg.ml-0.editar(data-id=`${pelicula.id}`) Editar  
+                            button.btn.btn-danger.btn-lg.mx-3.eliminar(data-id=`${pelicula.id}`) Eliminar 
+    script(src="js/index.js")

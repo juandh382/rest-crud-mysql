@@ -1,0 +1,23 @@
+extends main
+block content
+    section.row.justify-content-center
+        form.col-xl-8.col-lg-8.col-md-8.col-sm-12.col-12(method="POST", action="/agregar", enctype="multipart/form-data")
+            .form-group.mb-3 
+                label(for="titulo") Titulo
+                input(required, placeholder="", type="text", name="titulo", id="titulo", class="form-control")
+            .form-group.mb-3 
+                label(for="estreno") Estreno
+                input(required, placeholder="", type="date", name="estreno", id="estreno", class="form-control")
+            .row.mb-3 
+                .col-xl-4.col-lg-4.col-md-4.col-sm-12.col-12 
+                    label(for="taquilla") Taquilla
+                    input(required, placeholder="", type="number", name="taquilla", id="taquilla", class="form-control")
+                .col-xl-4.col-lg-4.col-md-4.col-sm-12.col-12 
+                    label(for="entradas") Entradas
+                    input(required, placeholder="", type="number", name="entradas", id="entradas", class="form-control")
+                .col-xl-4.col-lg-4.col-md-4.col-sm-12.col-12 
+                    label(for="top") top
+                    input(required, placeholder="", type="number", name="top", id="top", class="form-control")
+            button(type="submit", class="btn btn-lg btn-primary") Guardar 
+    script(src='//cdn.jsdelivr.net/npm/sweetalert2@11')
+    script(src="js/add.js")
